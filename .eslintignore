@@ -1,0 +1,4 @@
+/node_modules/
+
+/typescript/**/*.ts
+/script/**/*.ts
