@@ -1,13 +1,14 @@
 ## CSS 多行文本溢出省略显示
 
 > 回顾单行文本溢出省略
+
 ```css
 overflow: hidden;
 text-overflow: ellipsis;
 white-space: nowrap;
 ```
 
-### 在WebKit内核浏览器中解决文本多行溢出的显示问题：
+### 在 WebKit 内核浏览器中解决文本多行溢出的显示问题：
 
 ```css
 overflow: hidden;
@@ -25,4 +26,3 @@ webkit-box-orient: vertical;
 ### 其他浏览器的解决方案：
 
 > 利用相对定位 + 伪元素 在最后面加上一个省略号 需要控制块元素的行高
-
