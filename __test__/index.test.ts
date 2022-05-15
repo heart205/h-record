@@ -4,5 +4,6 @@
  * @Date 2022-05-15
  */
 describe('pass ts test', () => {
-  expect(true).toBe(true)
+  const isBool = true
+  expect(isBool).toBe(true)
 })
