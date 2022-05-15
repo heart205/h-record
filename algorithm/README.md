@@ -1,1 +1,1 @@
-# algorithm
+typescript realization algorithm
