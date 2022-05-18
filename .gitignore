@@ -24,3 +24,5 @@ pnpm-debug.log*
 
 # jest test
 /coverage/*
+.temp
+.cache
