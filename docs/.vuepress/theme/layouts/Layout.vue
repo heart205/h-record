@@ -21,7 +21,7 @@ import type { titles } from '../../types/layouts'
 import SiderBar from './sidebar.vue'
 type T = HTMLCollection | null
 export default {
-  name:'Layout',
+  name: 'Layout',
   data() {
     const data: {
       titles: Array<titles>
