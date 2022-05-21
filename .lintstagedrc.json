@@ -1,5 +1,6 @@
 {
   "*.{js,jsx,ts,tsx}": ["prettier --write .", "eslint  --fix"],
   "*.md": ["prettier --write"],
-  "**/*.{less,css}": "stylelint --fix"
+  "**/*.{less,css}": "stylelint --fix",
+  "ignoreFiles": "src/package/**/*"
 }
