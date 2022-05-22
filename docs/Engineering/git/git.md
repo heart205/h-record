@@ -265,3 +265,9 @@ git merge master --allow-unrelated-histories
 ```shell
 git pull origin master --allow-unrelated-histories
 ```
+
+## git 提交取消 eslint 校验
+
+```shell
+git commit --no-verify -m "commit"
+```

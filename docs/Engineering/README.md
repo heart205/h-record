@@ -16,8 +16,11 @@ created .lintstagedrc.json
   "*.{js,jsx,ts,tsx}": ["prettier --write .", "eslint  --fix"],
   "*.md": ["prettier --write"],
   "**/*.{less,css}": "stylelint --fix" //对css文件进行检测
+  "ignoreFiles": ["package/**/*"], //忽略对package文件的检测
 }
 ```
+
+> [issues 4712](https://github.com/stylelint/stylelint/issues/4712)
 
 add
 
