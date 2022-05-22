@@ -271,3 +271,9 @@ git pull origin master --allow-unrelated-histories
 ```shell
 git commit --no-verify -m "commit"
 ```
+
+## 修改远程地址
+
+```shell
+git remote set-url origin https://xxx.git
+```

@@ -476,5 +476,55 @@ cnavas {
 如果是个数值类型 则根据当前字体大小计算
 
 ```css
-line-height: 1.5 // 会根据当前的字体大小 * 1.5 则是行高;;
+line-height: 1.5 // 会根据当前的字体大小 * 1.5 则是行高;; ; ; ; ; ; ;
+```
+
+## 右边距失效问题:
+
+1. 默认状态下的块级元素右边距是无效的
+2. 当父元素的宽度小于子元素的宽度时，子元素的右边距无效。
+
+> 设置 float（除了 none 以外的值）、display (inline-block，inline-flex，inline-grid，inline-table，inline-box，table)、position（absolute，fixed）之后会生效。
+
+用 scrollWidth 取到的值也是不包括右边距的 (通过设置 display（inline-block，inline-flex，inline-grid，inline-table）可以让右边距生效)
+
+```css
+.a {
+  display: inline-flex; /* 通过设置inline-flex 使得右边距生效*/
+  flex-direction: column;
+}
+
+.b {
+  display: flex;
+}
+
+.e {
+  flex-shrink: 0;
+  margin: 100px 100px;
+  width: 200px;
+  height: 200px;
+  background: crimson;
+}
+```
+
+```html
+<div class="a">
+  <div class="b">
+    <div class="e"></div>
+    <div class="e"></div>
+    <div class="e"></div>
+    <div class="e"></div>
+    <div class="e"></div>
+    <div class="e"></div>
+  </div>
+  <div class="b">
+    <div class="e"></div>
+    <div class="e"></div>
+    <div class="e"></div>
+    <div class="e"></div>
+    <div class="e"></div>
+    <div class="e"></div>
+    <div class="e"></div>
+  </div>
+</div>
 ```

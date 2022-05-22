@@ -252,3 +252,9 @@ $ pm2 delete all         # 杀死全部进程
   "start":cross-env NODE_ENV=development nest start --watch
 }
 ```
+
+## typeorm 外键一对多关系
+
+[避免创建外键约束](https://typeorm.biunav.com/zh/relations-faq.html#%E9%81%BF%E5%85%8D%E5%88%9B%E5%BB%BA%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F)
+[外键约束](https://typeorm.bootcss.com/many-to-one-one-to-many-relations)
+[基本使用](https://111hunter.github.io/2020-04-10-typeorm/)

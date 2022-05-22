@@ -285,3 +285,7 @@ function downloadImg() {
   aLink.click()
 }
 ```
+
+## 精度丢失问题：
+
+[知乎 javascript 精度丢失](https://zhuanlan.zhihu.com/p/100353781)
