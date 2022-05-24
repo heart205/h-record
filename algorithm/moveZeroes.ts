@@ -3,10 +3,9 @@
  * @description 移动0
  * @Date 2022-05-16
  */
-
+import { swap } from './utils/swap'
 // 双指针 讲非0元素往前移动
 // i 为0元素的起始位置
-// [0,1,0,3,12]
 export function moveZeroes(nums: number[]): number[] {
   let i = 0,
     j = 0
@@ -28,3 +27,18 @@ export function moveZeroes(nums: number[]): number[] {
   }
   return nums
 }
+
+export function moveZeroes2(nums: number[]): number[] {
+  let left = 0,
+    right = 0 // 右指针
+  for (; left < nums.length; left++) {
+    // 不等于0的时候双指针是一起移动的
+    if (nums[left] !== 0) {
+      swap(nums, left, right)
+      right++
+    }
+  }
+  return nums
+}
+
+console.log(moveZeroes2([1, 0, 3, 12]))
