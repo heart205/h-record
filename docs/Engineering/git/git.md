@@ -234,6 +234,8 @@ git show commitId
 
 > 通常用于 bug 修复 例如:在 master 分支上修复的 bug，想要合并到当前 dev 分支，可以用`git cherry-pick <commit>`命令，把 bug 提交的修改“复制”到当前分支，避免重复劳动。
 
+> `commit` 能通过 `git log` 拿到
+
 ```shell
 git cherry-pick 593f63c60472ed5a5ab00d31f94fbadcdcd5f97d
 ```

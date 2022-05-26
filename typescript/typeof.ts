@@ -6,7 +6,7 @@
 // 类型  undefined null
 
 // ---------------------------------------------------------------
-// ? interface和 class中的typeof 的区别 typeof获取的是当前变量对应的类型 keyof获取的是实例对应的类型的属性名的联合
+// ? interface和 class中的typeof的区别 typeof获取的是当前变量对应的类型 keyof获取的是实例对应的类型的属性名的联合
 // ? class { a = 1} a是实例的属性名 因此 keyof可以获取到a
 // ? 如果用了 typeof A 则 此时的实例是一个 new (): A;[props: string | number | symbol]: any} 类型
 /**

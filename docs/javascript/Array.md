@@ -1,5 +1,7 @@
 ## Array.from
 
+> 第二个参数为映射函数
+
 ```js
 Array.from({ length: 4 }) // [ undefined, undefined, undefined, undefined ]
 ```
