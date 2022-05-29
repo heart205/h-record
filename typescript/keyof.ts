@@ -2,6 +2,7 @@
  * @author heart
  * @description keyof 操作符的理解
  * @Date 2022-05-08
+ * 交叉类型会把同一类型做合并，不同类型舍弃
  */
 // 类型 number string boolean symbol undefined null enum tuple function class interface
 
@@ -157,3 +158,11 @@ class persons {
 type personsKey = keyof persons
 
 const personsObj: personsKey = 'change'
+// ---------------------------------------------------------------
+
+// 索引也可以做变化，用 as 运算符，叫做重映射
+type MapType<T> = {
+  [Key in keyof T as `${Key & string}${Key & string}${Key & string}`]: [T[Key], T[Key], T[Key]]
+}
+
+type mapObj = MapType<{ a: 1 }>

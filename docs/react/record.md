@@ -77,3 +77,17 @@ export default class TestComponentHooks extends Component {
 ## react 15 - 16 更新
 
 > [组件生命周期](https://www.cnblogs.com/cc-freiheit/p/10009608.html)
+
+## 条件判断属性的几种方法：
+
+```js
+<Link to={props.content} {...(props.isTrue ? { bsStyle: 'success' } : {})}>
+  link
+</Link>
+```
+
+```js
+<Link to={props.content} byStyle={!props.isTrue ? 'success' : undefined}>
+  link
+</Link>
+```

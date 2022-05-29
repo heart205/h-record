@@ -12,7 +12,7 @@ function hRender(h, x) {
   ])
 }
 export default {
-  name: 'SiderBar',
+  name: 'SideBar',
   props: {
     titles: Object,
   },

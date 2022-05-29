@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="heart-main bgc">
-      <img src="../../assets/image/main.png" alt="" />
+      <!-- <img src="../../assets/image/main.png" alt="" /> -->
+      <div class="h-bgc"></div>
     </div>
     <div class="container">
       <div class="siderbar">
@@ -165,5 +166,10 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
+}
+.h-bgc {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to left bottom, hsl(104, 100%, 85%) 0%, hsl(24, 100%, 85%) 100%);
 }
 </style>

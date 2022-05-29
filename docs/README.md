@@ -9,10 +9,9 @@ layout: 'CustomLayout'
 
 作者：heart <br />
 🚀 heart
+📝 笔记
 
 ## 前端
-
-<!--   -->
 
 - [javaScript](javaScript)
 - [typeScript](typescript)
@@ -20,6 +19,7 @@ layout: 'CustomLayout'
 - [vue](vue)
 - [WebGL](WebGL)
 - [css](css)
+- [node](node)
 
 ## 算法
 
@@ -32,10 +32,10 @@ layout: 'CustomLayout'
 - [贝塞尔曲线](https://cubic-bezier.com/#.17,.67,.83,.67)
 - [墨滴](https://mdnice.com/)
 - [HTML5 CSS3 - 兼容性](https://caniuse.com/)
-- [wallhaven](https://wallhaven.cc/)
+- [wallpaper](https://wallhaven.cc/)
 - [正则小网站](https://any86.github.io/any-rule/)
 - [gradient - 背景渐变色](https://cssgradient.io/)
-- [grabient - 渐变颜色选取](https://www.grabient.com/)
+- [gradient - 渐变颜色选取](https://www.grabient.com/)
 - [自定义图状分割线](https://www.shapedivider.app/)
 - [clip - cli](https://bennettfeely.com/clippy/)
 - [渐变色网址](https://color.oulu.me/)
@@ -53,7 +53,7 @@ layout: 'CustomLayout'
 ## UI 网
 
 - [undraw - 在线 ui 图](https://undraw.co/)
-- [dribbble](https://dribbble.com/)
+- [dribble](https://dribbble.com/)
 - [my color](https://mycolor.space/?hex=%23845EC2&sub=1)
 
 ## webGL

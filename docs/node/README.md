@@ -1,25 +1,11 @@
 # node
 
-##
+## 基本模块
 
-执行 shell 命令
+- [fs](./base/fs.md)
+- [process](./base/process.md)
+- [child_process](./base/child_process.md)
 
-```js
-import { exec } from 'child_process'
-// 创建文件夹
-exec('mkdir sign')
+## case 案例
 
-// 查看当前的文件夹
-
-exec('ls', (err, stdout) => {
-  // 获取当前所有的文件 以及文件夹
-  console.log(stdout)
-})
-
-// 监听并且在控制台输出
-const cp = exec('ping www.baidu.com')
-
-cp.stdout.on('data', (chunk) => {
-  process.stdout.write(chunk)
-})
-```
+​ -[读取 env 配置文件](./record/readEnvFile.md)
