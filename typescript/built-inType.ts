@@ -25,7 +25,6 @@ type mergeObj<
 > = {
   [k in keyof T | keyof U]: k extends keyof T ? T[k] : k extends keyof U ? U[k] : never
 }
-type add = mergeObj<{ a: '1' }, { b: '1' }>
 
 // type MyPartial2<T, K extends keyof T> = mergeObj<Pick<T, K>, Omit<T, K>>
 type MyPartial2<T, K extends keyof T> = Pick<T, K>
