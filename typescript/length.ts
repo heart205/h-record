@@ -34,7 +34,7 @@ type multiply2<T extends number, U extends number, result extends unknown[] = []
   ? result['length']
   : multiply2<T, subtract<U, 1>, [...buildLength<T>, ...result]>
 
-// 减法
+// 除法
 type divide<
   T extends number,
   U extends number,
@@ -46,8 +46,43 @@ type divide<
   ? divide<T, U, [...rest], [...result, unknown]>
   : []
 
-// 减法第二种
+// 除法第二种
 type divide2<T extends number, U extends number, result extends unknown[] = []> = T extends 0
   ? result['length']
   : divide2<subtract<T, U>, U, [unknown, ...result]>
+
+// 比较谁大
+type GreaterThan<
+  T extends number,
+  U extends number,
+  arr1 extends unknown[] = [],
+  arr2 extends unknown[] = []
+> = arr1['length'] extends T
+  ? U
+  : arr2['length'] extends U
+  ? T
+  : GreaterThan<T, U, [...arr1, unknown], [...arr2, unknown]>
+
+type a = GreaterThan<1, 3>
+
+// Fibonacci
+type Fibonacci<
+  T extends number,
+  preArr extends unknown[] = [unknown], // 第二次的值
+  result extends unknown[] = [] // 上一次的值
+> = T extends 0 ? result['length'] : Fibonacci<subtract<T, 1>, [...result], [...preArr, ...result]> // [...preArr, ...result]表示的是当前的值
+
+// fibonacci
+function fibonacci(num: number): number {
+  let preArr = 1
+  let arr = 0
+  let result = 0
+  for (let i = 0; i < num; i++) {
+    result = preArr + arr
+    preArr = arr
+    arr = result
+  }
+  return result
+}
+
 export {}

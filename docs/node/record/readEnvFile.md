@@ -8,18 +8,17 @@
 // fs-readFile.cjs
 const fs = require('fs')
 
-// 以逗号为分隔符 将前面的和后面的字符串截取出来
-// 匹配由逗号前面的字符组成的字符串
+// 以逗号为分隔符 将前面的和后面的字符串截取出来  匹配由逗号前面的字符组成的字符串
 const reg = /(?:^(.*?)=(.*))/gm
+// 删除注释
+const annotation = /^((\s*)\#.*?\n)|(\#[!\'\"]*?$)/gm
 
 function readEnvFileSync(path = process.cwd() + '/.env', obj) {
   try {
     const buffer = fs.readFileSync(path)
-    const envString = buffer.toString()
+    const envString = buffer.toString().replace(annotation, '')
     while (reg.test(envString)) {
-      if (RegExp.$1 && RegExp.$2) {
-        obj[RegExp.$1.trim()] = RegExp.$2.trim().replace(/'|"/g, '')
-      }
+      if (RegExp.$1 && RegExp.$2) obj[RegExp.$1.trim()] = RegExp.$2.trim().replace(/'|"/g, '')
     }
   } catch (e) {
     console.log(e)
@@ -41,7 +40,7 @@ function readEnvFile(path) {
 
 function readEnvFileSyncRotate(path = process.cwd() + '/.env', obj = {}) {
   const buffer = fs.readFileSync(path)
-  const envString = buffer.toString()
+  const envString = buffer.toString().replace(annotation, '')
   let i = 0,
     key = '',
     value = '',

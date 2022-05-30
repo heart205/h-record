@@ -56,7 +56,7 @@ type funcKeyof = keyof typeof func
 
 /**
  * @desc: 对一个类进行class操作 和函数相似
- * keyof 获取的是实例的属性名组成的联合
+ * keyof 获取的是实例的属性名组成的联合 且只能获取public的
  */
 class A {
   static as: number
@@ -66,7 +66,7 @@ class A {
 type classKeyof = keyof A
 const aObj: classKeyof = 'a' // "a" | "b"
 
-// 这里因为 typeof A 有了一个新的 对象类型为  {new (): A; [props: string | number | symbol]: any} keyof 取得了prototype字段
+// 这里因为 typeof A 有了一个新的 对象类型为  {new (): A} keyof 取得了prototype字段
 // 如果A的static 新增类型
 A.as = 1
 // type classKeyof2 = keyof typeof A // 'prototype'

@@ -8,15 +8,22 @@
 // ---------------------------------------------------------------
 // ? interface和 class中的typeof的区别 typeof获取的是当前变量对应的类型 keyof获取的是实例对应的类型的属性名的联合
 // ? class { a = 1} a是实例的属性名 因此 keyof可以获取到a
-// ? 如果用了 typeof A 则 此时的实例是一个 new (): A;[props: string | number | symbol]: any} 类型
+// ? 如果用了 typeof A 则 此时的实例是一个 new (): A;} 类型
 /**
  * @desc: 对 class使用 typeof
  */
 class A {}
-type objTypeOf = typeof A
+type isTypeof<T extends Record<string | number | symbol, any>> = {
+  [key in keyof T as key extends any ? key : '123']: T[key]
+}
+type objTypeOf = isTypeof<typeof A>
 
-type a = { new (): A; [props: string | number | symbol]: any }
-type isType = [a] extends [objTypeOf] ? true : false
+// type objTypeOf = typeof A
+
+// type isType = [a] extends [objTypeOf] ? true : false
+
+type a = { new (): A } // 相当于 {prototype: A}
+type isType = [a] extends [{ prototype: A }] ? true : false // true
 
 // ---------------------------------------------------------------
 
