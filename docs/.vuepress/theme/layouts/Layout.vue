@@ -1,13 +1,12 @@
 <template>
   <div>
     <div class="heart-main bgc">
-      <!-- <img src="../../assets/image/main.png" alt="" /> -->
       <div class="h-bgc"></div>
     </div>
     <div class="container">
-      <div class="siderbar">
+      <div class="side-bar">
         <template v-for="(item, index) in titles" :key="index">
-          <SiderBar :titles="item" />
+          <SideBar :titles="item" />
         </template>
       </div>
       <main class="flex-1">
@@ -19,7 +18,7 @@
 
 <script lang="ts">
 import type { titles } from '../../types/layouts'
-import SiderBar from './sidebar.vue'
+import SideBar from './sidebar.vue'
 type T = HTMLCollection | null
 export default {
   name: 'Layout',
@@ -32,7 +31,7 @@ export default {
     return data
   },
   components: {
-    SiderBar,
+    SideBar,
   },
   methods: {
     // 推测title的标题是第几标题
@@ -146,7 +145,7 @@ export default {
 .container {
   display: flex;
 }
-.siderbar {
+.side-bar {
   width: 200px;
   border-right: 1px solid var(--c-border);
   margin-right: 40px;
@@ -154,7 +153,7 @@ export default {
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 768px) {
-  .siderbar {
+  .side-bar {
     width: 0px;
     overflow: hidden;
   }
