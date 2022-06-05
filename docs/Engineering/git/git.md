@@ -279,3 +279,15 @@ git commit --no-verify -m "commit"
 ```shell
 git remote set-url origin https://xxx.git
 ```
+
+## 移除远程地址
+
+```shell
+git remote rm 仓库名
+```
+
+## 删除远程分支
+
+```shell
+git push origin --delete 分支名
+```

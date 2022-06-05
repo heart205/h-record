@@ -79,3 +79,8 @@ console.log(Number.isSafeInteger(-1 * 2 ** 53 + 1)) // true
 console.log(Number.isSafeInteger(2 ** 53)) // false
 console.log(Number.isSafeInteger(2 ** 53 - 1)) // true
 ```
+
+## 剪头函数
+
+1. 箭头函数没有 argument
+2. 箭头函数没有 this
