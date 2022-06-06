@@ -1,5 +1,9 @@
 # WebGL
 
+## thingJs 的使用
+
+[thingJs](http://www.thingjs.com/guide/main/)
+
 ## 建模教程
 
 - [blender3.1 新手 0 基础入门](https://www.bilibili.com/video/BV1US4y1N7xN?p=3)
