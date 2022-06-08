@@ -278,3 +278,7 @@ export default {
 }
 </style>
 ```
+
+## 编辑器 功能
+
+[editor 富文本](https://www.wangeditor.com/)
