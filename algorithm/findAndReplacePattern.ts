@@ -2,6 +2,7 @@
  * @author heart
  * @Date 2022-06-12
  * @see: 890. 查找和替换模式
+ * @see: https://leetcode.cn/problems/find-and-replace-pattern/solution/by-ac_oier-s4cw/
  */
 // 字符串模式匹方法:
 export function findAndReplacePattern(words: string[], pattern: string): string[] {
