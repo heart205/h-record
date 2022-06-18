@@ -13,7 +13,7 @@
 // 联合类型转交叉类型
 type unionToInsertion<T> = (T extends T ? (x: T) => unknown : never) extends (x: infer r) => unknown ? r : never
 
-// type asd = unionToInsertion<{ a: 1 } | { b: 2 }>
+type asd = unionToInsertion<{ a: 1 } | { b: 2 }>
 // 如果函数没有括号 则会变成最后一个unknown 去 extends 后面的函数
 type fun = (x: unknown) => unknown extends (x: infer r) => unknown ? true : never
 
@@ -64,3 +64,27 @@ type classPublicProps<T extends Record<string, unknown>> = {
 // type val = classPublicProps<Person>
 
 export {}
+
+// TODO: 联合类型转元组
+
+// 利用函数的逆变性转换联合类型为元组类型
+
+type mergeTuple<T extends any[], U> = [...T, U]
+type unionToInsertion1<T> = (T extends T ? (x: () => T) => unknown : never) extends (x: infer r) => unknown ? r : never
+type getUnionLast<T> = unionToInsertion1<T> extends { (...args: any[]): infer R } ? R : never
+type unionToTuple<Union, result extends any[] = [], Last = getUnionLast<Union>> = [Union] extends [never]
+  ? result
+  : unionToTuple<Exclude<Union, Last>, mergeTuple<result, Last>>
+
+const case1 = {
+  name: 'name',
+  age: 18,
+}
+
+;(Object.keys(case1) as unionToTuple<keyof typeof case1>).forEach((val) => {
+  if (val === 'name') {
+    case1[val] = '2'
+  } else {
+    case1[val] = 2
+  }
+})

@@ -46,4 +46,11 @@ type uniqueArray<T extends unknown[], result extends unknown[] = []> = T extends
     : uniqueArray<rest, [r, ...result]>
   : result
 
+// 接口声明数组
+interface array {
+  [index: number]: any
+}
+
+const ar: array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
 export {}
