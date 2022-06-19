@@ -291,3 +291,9 @@ git remote rm 仓库名
 ```shell
 git push origin --delete 分支名
 ```
+
+## 清除某个文件的 git 记录
+
+```shell
+git rm -r --cached 文件名
+```
