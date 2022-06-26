@@ -22,31 +22,23 @@ class TreeNode {
     this.right = right === undefined ? null : right
   }
 }
-
+// 每次优先遍历左边节点
 export function findBottomLeftValue(root: TreeNode | null): number {
   // flag 标志着是否是左节点
-  const result: Array<number[]> = []
-  const dfs = (node: TreeNode | null, flag: boolean, deep: number) => {
-    if (!node) return 2 ** 31 * -1
-    if (node.left === null && node.right == null && flag) {
-      result.push([node.val, deep])
+  const result: Array<number> = []
+  const dfs = (node: TreeNode | null, deep: number) => {
+    if (!node) return
+    if (result[deep] === undefined) {
+      result[deep] = node.val
     }
     if (node.left) {
-      dfs(node.left, true, deep + 1)
+      dfs(node.left, deep + 1)
     }
     if (node.right) {
-      dfs(node.right, false, deep + 1)
+      dfs(node.right, deep + 1)
     }
   }
-  dfs(root, true, 1)
-
-  let deep = 1,
-    ans = root!.val
-  for (let i = 0; i < result.length; i++) {
-    if (result[i][1] > deep) {
-      deep = result[i][1]
-      ans = result[i][0]
-    }
-  }
+  dfs(root, 0)
+  const ans = result.length > 0 ? result[result.length - 1] : 2 ** 31 * -1
   return ans
 }
